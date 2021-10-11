@@ -4,7 +4,7 @@ import com.cssl.pojo.BookManager;
 import com.cssl.service.BookManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import io.swagger.annotations.*;
 
@@ -17,7 +17,7 @@ public class BookController {
 
     //查询所有
     @ApiOperation("显示所有书籍信息接口")
-    @RequestMapping("/list")
+    @GetMapping("/list")
     public ModelAndView list(ModelAndView mv){
         mv.addObject("list",bookManagerService.showAll());
         mv.setViewName("list");
@@ -25,7 +25,8 @@ public class BookController {
     }
 
     //删除指定书籍信息
-    @RequestMapping("/del")
+    @ApiOperation("删除指定书籍接口")
+    @DeleteMapping("/del")
     public String del(ModelAndView mv,Integer id){
         int i = bookManagerService.deleteBookManager(id);
         if (i>0){
@@ -37,7 +38,8 @@ public class BookController {
     }
 
     //查询指定id的书籍信息
-    @RequestMapping("/findById")
+    @ApiOperation("显示指定书籍信息接口")
+    @GetMapping("/findById")
     public ModelAndView showOne(ModelAndView mv,Integer id){
         BookManager bookManager = bookManagerService.findById(id);
         mv.addObject("book",bookManager);
@@ -46,7 +48,8 @@ public class BookController {
     }
 
     //修改书籍信息
-    @RequestMapping("/save")
+    @ApiOperation("修改指定书籍信息接口")
+    @PutMapping("/save")
     public  String saveBook(ModelAndView mv,BookManager bookManager) {
         int i = bookManagerService.updateBookManager(bookManager);
         if (i > 0) {
@@ -57,7 +60,8 @@ public class BookController {
         }
     }
     // 新增书籍
-        @RequestMapping("/add")
+    @ApiOperation("新增书籍信息接口")
+        @PostMapping("/add")
         public String addBook(ModelAndView mv,BookManager bookManager) {
             int num = bookManagerService.addBookManager(bookManager);
             if (num > 0) {
