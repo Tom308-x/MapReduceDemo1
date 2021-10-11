@@ -7,7 +7,7 @@
     </select>
 
     <insert id="insertBook" parameterType="BookManager">
-        insert into bookmanage(name, author, "time", type)
+        insert into bookmanage(name, author, time, type)
         values (#{name},#{author},#{time},#{type})
     </insert>
 

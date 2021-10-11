@@ -1,5 +1,6 @@
 package com.cssl.service.impl;
 
+import com.cssl.mapper.BookManagerMapper;
 import com.cssl.pojo.BookManager;
 import com.cssl.service.BookManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
