@@ -24,7 +24,7 @@
             <th colspan="4" style="text-align:left;background-color: yellow">
                 作者姓名</th>
             <th>
-                <input name="anothername" th:value="${book.getAuthor()}">
+                <input name="author" th:value="${book.getAuthor()}">
             </th>
 
         </tr>
@@ -34,7 +34,7 @@
                 发行时间</th>
 
             <th>
-                <input name="property" type="date" th:value="${#dates.format(book.getTime(),'yyyy-MM-dd')}">
+                <input name="time" type="date" th:value="${#dates.format(book.getTime(),'yyyy-MM-dd')}">
             </th>
 
         </tr>
@@ -42,7 +42,7 @@
             <th colspan="4" style="text-align:left;background-color: yellow">
                 书籍类型</th>
             <th>
-                <input name="price" th:value="${book.getType()}">
+                <input name="type" th:value="${book.getType()}">
             </th>
 
         </tr>

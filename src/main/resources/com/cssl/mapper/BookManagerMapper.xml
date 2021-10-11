@@ -3,24 +3,24 @@
 <mapper namespace="com.cssl.mapper.BookManagerMapper">
 
     <select id="showAllBook" resultType="BookManager">
-        select * from bookmanager
+        select * from bookmanage
     </select>
 
     <insert id="insertBook" parameterType="BookManager">
-        insert into bookmanager(name, author, time, type)
+        insert into bookmanage(name, author, time, type)
         values (#{name},#{author},#{time},#{type})
     </insert>
 
     <delete id="deleteBook" parameterType="int">
-        delete from bookmanager where id=#{id}
+        delete from bookmanage where id=#{id}
     </delete>
 
     <select id="findById" parameterType="int" resultType="BookManager">
-        select * from bookmanager where id=#{id}
+        select * from bookmanage where id=#{id}
     </select>
 
     <update id="updateBook" parameterType="BookManager">
-        update bookmanager set name=#{name},author=#{author},time=#{time},type=#{type}
+        update bookmanage set name=#{name},author=#{author},time=#{time},type=#{type}
         where id=#{id}
     </update>
 

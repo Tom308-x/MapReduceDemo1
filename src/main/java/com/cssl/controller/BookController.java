@@ -26,7 +26,7 @@ public class BookController {
 
     //删除指定书籍信息
     @ApiOperation("删除指定书籍接口")
-    @DeleteMapping("/del")
+    @RequestMapping("/del")
     public String del(ModelAndView mv,Integer id){
         int i = bookManagerService.deleteBookManager(id);
         if (i>0){
@@ -49,7 +49,7 @@ public class BookController {
 
     //修改书籍信息
     @ApiOperation("修改指定书籍信息接口")
-    @PutMapping("/save")
+    @RequestMapping("/save")
     public  String saveBook(ModelAndView mv,BookManager bookManager) {
         int i = bookManagerService.updateBookManager(bookManager);
         if (i > 0) {
