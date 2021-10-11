@@ -29,7 +29,7 @@
         <td th:text="${list.id}">1</td>
         <td th:text="${list.name}">金庸全集</td>
         <td th:text="${list.author}">金庸</td>
-        <td th:text="${list.time}">2013-02-21</td>
+        <td th:text="${#dates.format(list.time,'yyyy-MM-dd')}">2013-02-21</td>
         <td th:text="${list.type}">22</td>
         <td>
             <a onclick="return confirm('确认是否删除')" th:href="@{del(id=${list.id})}">删除</a>

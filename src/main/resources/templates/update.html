@@ -34,7 +34,7 @@
                 发行时间</th>
 
             <th>
-                <input name="property" th:value="${book.getTime()}">
+                <input name="property" type="date" th:value="${#dates.format(book.getTime(),'yyyy-MM-dd')}">
             </th>
 
         </tr>
