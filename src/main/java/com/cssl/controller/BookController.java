@@ -4,17 +4,19 @@ import com.cssl.pojo.BookManager;
 import com.cssl.service.BookManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import io.swagger.annotations.*;
 
 @Controller
+@Api(value = "提供书籍信息增删改查功能的接口",tags = "书籍管理")
 public class BookController {
 
     @Autowired
     private BookManagerService bookManagerService;
 
     //查询所有
+    @ApiOperation("显示所有书籍信息接口")
     @RequestMapping("/list")
     public ModelAndView list(ModelAndView mv){
         mv.addObject("list",bookManagerService.showAll());
