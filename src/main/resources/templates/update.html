@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改书籍信息</title>
+</head>
+<body>
+<form action="save" method="post">
+    <table border="1" >
+        <tr>
+            <th colspan="8" height="50" style="font-size: 20px;background-color: yellow">书籍信息列表</th>
+        </tr>
+        <input name="id" type="hidden" th:value="${book.getId()}">
+        <tr>
+            <th colspan="4" style="text-align:left;background-color: yellow">
+               书籍名称：</th>
+            <th><input name="name" th:value="${book.getName()}"></th>
+
+
+        </tr>
+
+        <tr>
+
+            <th colspan="4" style="text-align:left;background-color: yellow">
+                作者姓名</th>
+            <th>
+                <input name="anothername" th:value="${book.getAuthor()}">
+            </th>
+
+        </tr>
+
+        <tr>
+            <th colspan="4" style="text-align:left;background-color: yellow">
+                发行时间</th>
+
+            <th>
+                <input name="property" th:value="${book.getTime()}">
+            </th>
+
+        </tr>
+        <tr>
+            <th colspan="4" style="text-align:left;background-color: yellow">
+                书籍类型</th>
+            <th>
+                <input name="price" th:value="${book.getType()}">
+            </th>
+
+        </tr>
+
+        <tr>
+            <th colspan="8">
+                <input type="submit" value="修改">
+                <input type="reset">
+            </th>
+        </tr>
+
+
+
+
+
+
+    </table>
+</form>
+</body>
+</html>

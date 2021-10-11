@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍信息列表</title>
+    <style>
+        #ji{background-color: yellow}
+    </style>
+</head>
+<body>
+<table border="1">
+    <tr>
+        <th colspan="7" height="50" style="font-size: 20px;background-color: yellow">书籍信息列表</th>
+    </tr>
+    <tr>
+        <th colspan="7" style="text-align:right">
+            <a th:href="add.html" style="color: red">新增书籍信息</a>
+        </th>
+    </tr>
+    <tr style="background-color: yellow">
+        <th>书籍编号</th>
+        <th>书籍名称</th>
+        <th>作者姓名</th>
+        <th>发行时间</th>
+        <th>书籍类型</th>
+        <th>操作</th>
+    </tr>
+    <tr  th:each="list,li:${list}" th:id="${li.even ? 'ji':''}">
+        <td th:text="${list.id}">1</td>
+        <td th:text="${list.name}">金庸全集</td>
+        <td th:text="${list.author}">金庸</td>
+        <td th:text="${list.time}">2013-02-21</td>
+        <td th:text="${list.type}">22</td>
+        <td>
+            <a onclick="return confirm('确认是否删除')" th:href="@{del(id=${list.id})}">删除</a>
+            <a th:href="@{findById(id=${list.id})}">修改</a>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>
